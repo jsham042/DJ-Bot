@@ -1,6 +1,5 @@
 const clientId = 'c3a859af5f674d61b9aaefe638761f1e'; // client ID  that Joe got from registering the app
 const redirectUri = 'http://localhost:3000/callback'; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
-const client_secret = '94d140beb73e4a40a414b828444bb11f'; // client secret code that Joe got from registering the app
 let accessToken;
 
 
@@ -27,6 +26,29 @@ const Spotify = {
   search(term) {
     const accessToken = Spotify.getAccessToken();
     return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    }).then(response => {
+      return response.json();
+    }).then(jsonResponse => {
+      if (!jsonResponse.tracks) {
+        return [];
+      }
+      return jsonResponse.tracks.items.map(track => ({
+        id: track.id,
+        name: track.name,
+        artist: track.artists[0].name,
+        album: track.album.name,
+        uri: track.uri
+      }));
+    });
+  },
+
+  makeRecommendation(Recommendation) {
+    const accessToken = Spotify.getAccessToken();
+    return fetch(`https://api.spotify.com/v1/recommendations?limit=100&market=us&seed_genres=edm%2C%20pop%2C%20reggaeton%2C%20r-n-b&min_danceability=75&max_danceability=100&target_danceability=85`,//will fill in withslider values later
+     { 
       headers: {
         Authorization: `Bearer ${accessToken}`
       }

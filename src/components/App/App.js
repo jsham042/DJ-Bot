@@ -73,7 +73,7 @@ class App extends React.Component {
         <div className="App">
           <SearchBar onSearch={this.search} />
           <Danceability onDanceability={this.setDanceability} />
-          <Genres onGenres ={this.setGenres}
+          {/* <Genres onGenres ={this.setGenres} /> */}
           <div className="App-playlist">
             <SearchResults searchResults={this.state.searchResults}
                            onAdd={this.addTrack} />
