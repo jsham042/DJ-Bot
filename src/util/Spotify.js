@@ -1,8 +1,8 @@
 const clientId = "4e809eeef2554f81abe8157dcc4f742f"; // client ID  that Joe got from registering the app
 const redirectUri = "http://localhost:3000/callback"; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
 const client_secret = "98f70415f3d654034ab44f0f7b0f0b768"; // client secret code that Joe got from registering the app
-const clientId = "c3a859af5f674d61b9aaefe638761f1e"; // client ID  that Joe got from registering the app
-const redirectUri = "http://localhost:3000/callback"; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
+//const clientId = "c3a859af5f674d61b9aaefe638761f1e"; // client ID  that Joe got from registering the app
+//const redirectUri = "http://localhost:3000/callback"; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
 let accessToken;
 
 const Spotify = {
