@@ -4,7 +4,7 @@ import './App.css';
 import Playlist from '../Playlist/Playlist';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
-// import Danceability from '../Danceability/Danceability';
+import Danceability from '../Danceability/Danceability';
 // import Genres from '../Genres/Genres';
 import Recommendation from '../Recommendation/Recommendation';
 import Spotify from '../../util/Spotify';
@@ -79,8 +79,8 @@ class App extends React.Component {
         <h1>DJ <span className="highlight">Bot</span></h1>
         <div className="App">
           <SearchBar onSearch={this.search} />
-          {/* <Danceability onDanceability={this.setDanceability} /> */}
-          <Recommendation onRecommendation={this.makeRecommendation}/> 
+          <Danceability onDanceability={this.setDanceability} />
+          <Recommendation onRecommendation={this.makeRecommendation}/>
           {/* <Genres onGenres={this.setGenres} /> */}
           <div className="App-playlist">
             <SearchResults searchResults={this.state.searchResults}

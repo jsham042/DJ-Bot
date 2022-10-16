@@ -8,7 +8,7 @@ class DanceAbility extends React.Component {
     super(props);
 
     this.state = {
-        term: 50
+        level: 50
       };
     
     this.handleValueChange = this.handleValueChange.bind(this);
@@ -16,7 +16,7 @@ class DanceAbility extends React.Component {
   }
 
   handleValueChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({level: event.target.value});
   }
 
   setDanceAbility() {
@@ -26,8 +26,8 @@ class DanceAbility extends React.Component {
   render() {
     return (
       <div className="DanceabilitySlider">
-        <label for="Danceability Slider" class="form-label">Danceability Level</label>
-        <input type="range" class="form-range" min="0" max="100" step ="1" id="Danceability Slider"></input>
+        <label for="DanceabilitySlider" class="form-label">Danceability Level</label>
+        <input type="range" class="form-range" min="0" max="100" step ="5" id="DanceabilitySlider"></input>
       </div>
     );
   }

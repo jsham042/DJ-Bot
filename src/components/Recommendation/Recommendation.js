@@ -8,7 +8,7 @@ class Recommendation extends React.Component {
     super(props);
 
     this.state = {
-      genre: 'pop',
+      genre: '',
     };
 
     this.makeRecommendation = this.makeRecommendation.bind(this);
@@ -27,16 +27,18 @@ class Recommendation extends React.Component {
   render() {
     return (
      <div className="Recommendation">
-        <label for="genreList" class="form-label">Enter Genre</label>
-        <input class="form-control" list="datalistOptions" id="genreaList" placeholder="Type to search..."> </input>
+      <label for="Recommendation" class="form-label">Genre</label>
+        {/* <label for="genreList" class="form-label">Enter Genre</label>
+        <input class="form-control" list="datalistOptions" id="genreList" placeholder="Type to search..."> </input>
         <datalist id="datalistOptions">
           <option value="pop"> </option>
           <option value="r-n-b"> </option>
           <option value="reggaeton"> </option>
           <option value="edm"> </option>
           <option value="rock"> </option>
-        </datalist>
-      <button className="Recommendation Button" onClick={this.makeRecommendation}>GET RECOMMENDATIONS</button>
+        </datalist> */}
+      <input onChange = {this.handleRecommendation} placeholder = "+" /> <label Genre></label>
+      <button className="RecommendationButton" onClick={this.makeRecommendation}>GET RECOMMENDATIONS</button>
       </div>
         
     );

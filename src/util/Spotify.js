@@ -47,7 +47,7 @@ const Spotify = {
 
   makeRecommendation(genre) {
     const accessToken = Spotify.getAccessToken();
-    return fetch(`https://api.spotify.com/v1/recommendations?limit=100&market=us&seed_genres=${genre}`,//will fill in withslider values later
+    return fetch(`https://api.spotify.com/v1/recommendations?limit=100&market=us&seed_genres=${genre}&min_danceability=50"`,//will fill in with danceability values later
      { 
       headers: {
         Authorization: `Bearer ${accessToken}`
