@@ -131,31 +131,32 @@ import './Genres.css';
 // "world-music"
 
 class Genres extends React.Component
-{
-    constructor(props)
+{    
+    constructor(props) 
     {
-                  
-              super(props);
+        super(props);
+        this.setGenre = this.setGenre.bind(this);
+        this.handleGenreChange = this.handleGenreChange.bind(this);
+    };
+
+    setGenre() 
+    {
+        this.props.onChange(this.state.value);
     }
-    
-    render()
+
+    handleGenreChange(event) {
+        this.setState({value: event.target.value});
+      }
+
+    render() 
+    {
         return (
-            <div className="GenreButtons">
-            <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-        <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
-        </div>
-        <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-        <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
-        </div>
-        <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" disabled>
-        <label class="form-check-label" for="flexSwitchCheckDisabled">Disabled switch checkbox input</label>
-        </div>
-        <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked disabled>
-        <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Disabled checked switch checkbox input</label>
-        </div>
-)
+            <div class = "form-check form-switch" >
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"> </input>
+                <label class="form-check-label" for="flexSwitchCheckDefault">Pop</label>
+            </div> 
+        );
+    }
 }
+
+export default Genres;

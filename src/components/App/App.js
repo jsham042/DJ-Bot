@@ -6,7 +6,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Danceability from '../Danceability/Danceability';
 // import Genres from '../Genres/Genres';
-// import Recommendation from '../Recommendation/Recommendation';
+import Recommendation from '../Recommendation/Recommendation';
 import Spotify from '../../util/Spotify';
 
 class App extends React.Component {
@@ -24,6 +24,7 @@ class App extends React.Component {
     this.removeTrack = this.removeTrack.bind(this);
     this.updatePlaylistName = this.updatePlaylistName.bind(this);
     this.savePlaylist = this.savePlaylist.bind(this);
+    this.makeRecommendation = this.makeRecommendation.bind(this);
     
       }
 
@@ -58,13 +59,19 @@ class App extends React.Component {
     const trackUris = this.state.playlistTracks.map(track => track.uri);
     Spotify.savePlaylist(this.state.playlistName, trackUris).then(() => {
       this.setState({
-        playlistName: 'New Playlist',
+        playlistName: '[NAME PLAYLIST]',
         playlistTracks: []
       });
     });
   }
 
-  
+  makeRecommendation(genre)
+  {
+    Spotify.makeRecommendation(genre).then(searchResults => {
+      this.setState({searchResults: searchResults});
+    });
+
+  }
 
   render() {
     return (
@@ -73,7 +80,8 @@ class App extends React.Component {
         <div className="App">
           <SearchBar onSearch={this.search} />
           <Danceability onDanceability={this.setDanceability} />
-          {/* <Genres onGenres ={this.setGenres} /> */}
+          <Recommendation onRecommendation={this.makeRecommendation}/>
+          {/* <Genres onGenres={this.setGenres} /> */}
           <div className="App-playlist">
             <SearchResults searchResults={this.state.searchResults}
                            onAdd={this.addTrack} />
