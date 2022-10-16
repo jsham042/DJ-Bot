@@ -4,6 +4,16 @@
   align-items: left;
   padding-top: .0rem;
   margin-bottom: 0rem;
-  width: 287px;
+  width: 300px;
+  height: 300px;
+  overflow-y: scroll;
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  background-color: #302438;
+ 
+
+  }
+
+  .btn btn-outline-secondary{
 
   }

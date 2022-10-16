@@ -6,8 +6,12 @@
   width: 37%;
   max-height: 950px;
   padding: 2.27rem 1.16rem;
-  background-color: rgba(1, 12, 63, 0.7);
-  box-shadow: 0 4px 2px 2px #000000;
+  border-radius: 30px;
+  background-color: #302438;
+  position: relative;
+  top: -700px;
+  right: -130px;
+  /*box-shadow: 0 4px 2px 2px #000000;*/
 }
 
 .Playlist input {
@@ -34,6 +38,7 @@
   transition: background-color .25s;
   color: #fff;
   font-weight: 500;
+ 
 }
 
 .Playlist-save:hover {

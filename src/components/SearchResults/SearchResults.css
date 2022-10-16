@@ -2,9 +2,14 @@
   width: 25%;
   height: 950px;
   overflow-y: scroll;
-  padding: .88rem;
-  background-color:#302438;
-  /* box-shadow: 0 4px 2px 2px #000000; */
+  padding: 2.27rem 1.16rem;
+  border-radius: 30px;
+  background-color: #302438;
+  position: relative;
+  top: -700px;
+  right: -400px;
+  /*box-shadow: 0 4px 2px 2px #000000;*/
+ 
 }
 
 ::-webkit-scrollbar {

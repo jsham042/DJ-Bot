@@ -51,10 +51,12 @@ const Spotify = {
 
   makeRecommendation(genre) {
     const accessToken = Spotify.getAccessToken();
-    return fetch(`https://api.spotify.com/v1/recommendations?limit=100&market=us&seed_genres=edm%2C%20pop%2C%20reggaeton%2C%20r-n-b&min_danceability=75&max_danceability=100&target_danceability=85`,//will fill in withslider values later
-     { 
-      headers: {
-        Authorization: `Bearer ${accessToken}`
+    return fetch(
+      `https://api.spotify.com/v1/recommendations?limit=100&market=us&seed_genres=edm%2C%20pop%2C%20reggaeton%2C%20r-n-b&min_danceability=75&max_danceability=100&target_danceability=85`, //will fill in withslider values later
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
       }
     )
       .then((response) => {
