@@ -1,5 +1,5 @@
 import React from 'react';
-import DanceAbility from '../Danceability/Danceability';
+// import DanceAbility from '../Danceability/Danceability';
 
 import './Recommendation.css';
 
@@ -26,18 +26,19 @@ class Recommendation extends React.Component {
 
   render() {
     return (
-      <div className="Recommendation">
-        <label for="exampleDataList" class="form-label">Enter Genre</label>
-        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+     <div className="Recommendation">
+        <label for="genreList" class="form-label">Enter Genre</label>
+        <input class="form-control" list="datalistOptions" id="genreaList" placeholder="Type to search..."> </input>
         <datalist id="datalistOptions">
-            <option value="pop">
-            <option value="r-n-b">
-            <option value="reggaeton">
-            <option value="edm">
-            <option value="rock">
-          </datalist>
-          <button className="Recommendation Button" onClick={this.makeRecommendation}>GET RECOMMENDATIONS</button>
-        </div>
+          <option value="pop"> </option>
+          <option value="r-n-b"> </option>
+          <option value="reggaeton"> </option>
+          <option value="edm"> </option>
+          <option value="rock"> </option>
+        </datalist>
+      <button className="Recommendation Button" onClick={this.makeRecommendation}>GET RECOMMENDATIONS</button>
+      </div>
+        
     );
   }
 }
