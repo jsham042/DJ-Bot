@@ -18,6 +18,7 @@ class Playlist extends React.Component {
   render() {
     return (
       <div className="Playlist">
+        <img src={require("../images/album.png")} />
         <input onChange={this.handleNameChange} defaultValue={"New Playlist"} />
         <TrackList
           tracks={this.props.playlistTracks}
