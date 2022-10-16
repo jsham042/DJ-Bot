@@ -4,6 +4,9 @@ import './App.css';
 import Playlist from '../Playlist/Playlist';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
+import Danceability from '../Danceability/Danceability';
+// import Genres from '../Genres/Genres';
+// import Recommendation from '../Recommendation/Recommendation';
 import Spotify from '../../util/Spotify';
 
 class App extends React.Component {
@@ -21,7 +24,8 @@ class App extends React.Component {
     this.removeTrack = this.removeTrack.bind(this);
     this.updatePlaylistName = this.updatePlaylistName.bind(this);
     this.savePlaylist = this.savePlaylist.bind(this);
-  }
+    
+      }
 
   search(term) {
     Spotify.search(term).then(searchResults => {
@@ -60,12 +64,16 @@ class App extends React.Component {
     });
   }
 
+  
+
   render() {
     return (
       <div>
-        <h1>Ja<span className="highlight">mmm</span>ing</h1>
+        <h1>DJ <span className="highlight">Bot</span></h1>
         <div className="App">
           <SearchBar onSearch={this.search} />
+          <Danceability onDanceability={this.setDanceability} />
+          {/* <Genres onGenres ={this.setGenres} /> */}
           <div className="App-playlist">
             <SearchResults searchResults={this.state.searchResults}
                            onAdd={this.addTrack} />
